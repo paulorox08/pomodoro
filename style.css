@@ -10,9 +10,25 @@ body {
 }
 
 .countdown {
-    color: black;
-    background-color: white;
     font-size: 40px;
     width: 10%;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.minutes {
+    background-color: grey;
+    font-size: 98px;
+    border-radius: 10px;
+    padding: 50px;
+}
+
+.seconds {
+    background-color: grey;
+    font-size: 98px;
+    border-radius: 10px;
+    padding: 50px;
 }
