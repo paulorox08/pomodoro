@@ -13,13 +13,13 @@ function updateTimer() {
     time--;
 }
 
-function stopTimer() {
-
-}
-
-
 const startTimer = document.querySelector('.startTimer');
+
 startTimer.addEventListener('click', () => {
-    setInterval(updateTimer, 1000); 
-    startTimer.innerHTML = "STOP";
+    intervalID = setInterval(updateTimer, 1000);
 })
+
+const stopTimer = document.querySelector('.stopTimer');
+stopTimer.addEventListener('click', () => {
+    clearInterval(intervalID);
+});
