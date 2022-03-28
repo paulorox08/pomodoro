@@ -16,27 +16,30 @@ toggle.addEventListener('click', lightOrDark)
 
 // TIMER
 
-const countDown = document.querySelector('.countdown');
+let countDown = document.querySelector('.countdown');
 
 const oldTime = countDown.textContent;
 
-const minutes = countDown.textContent.substring(0,2);
+let minutes = countDown.textContent.substring(0,2);
 let time = minutes * 60;
 
 function updateTimer() {
-    const minutesRemaining = Math.floor(time / 60);
+    let minutesRemaining = Math.floor(time / 60);
     let secondsRemaining = time % 60;
 
-    secondsRemaining = secondsRemaining < 10 ? '0' + secondsRemaining: secondsRemaining;
+    secondsRemaining = secondsRemaining < 10 && secondsRemaining > 0 ? '0' + secondsRemaining: secondsRemaining;
+
+    minutesRemaining = minutesRemaining < 10 && minutesRemaining > 0 ? '0' + minutesRemaining: minutesRemaining;
 
     countDown.innerHTML = `${minutesRemaining}:${secondsRemaining}`;
     time--;
-}
+
+};
 
 const startTimer = document.querySelector('.startTimer');
 
 startTimer.addEventListener('click', () => {
-    intervalID = setInterval(updateTimer, 1000);
+    intervalID = setInterval(updateTimer, 1);
 });
 
 const stopTimer = document.querySelector('.stopTimer');
