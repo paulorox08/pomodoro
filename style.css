@@ -1,13 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Oswald:wght@500&family=Poppins:wght@200&family=Roboto:wght@100&display=swap');
 
+:root.dark {
+    --text-color: white;
+    --bg-colour: black;
+}
+
+:root.light {
+    --text-color: black;
+    --bg-colour: white;
+}
 body {
     font-family: 'Oswald', sans-serif;
-    background-color: white;
+    background-color: var(--bg-colour);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    color: var(--text-color);
 }
 
 .countdown {
