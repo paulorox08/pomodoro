@@ -18,6 +18,8 @@ toggle.addEventListener('click', lightOrDark)
 
 const countDown = document.querySelector('.countdown');
 
+const oldTime = countDown.textContent;
+
 const minutes = countDown.textContent.substring(0,2);
 let time = minutes * 60;
 
@@ -35,9 +37,14 @@ const startTimer = document.querySelector('.startTimer');
 
 startTimer.addEventListener('click', () => {
     intervalID = setInterval(updateTimer, 1000);
-})
+});
 
 const stopTimer = document.querySelector('.stopTimer');
 stopTimer.addEventListener('click', () => {
     clearInterval(intervalID);
+});
+
+const resetTimer = document.querySelector('.resetTimer');
+resetTimer.addEventListener('click', () => {
+    countDown.innerHTML = oldTime;
 });
